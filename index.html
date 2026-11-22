@@ -68,7 +68,6 @@
     <section id="know" class="band know" aria-labelledby="know-heading">
       <div class="wrap">
         <h2 id="know-heading" class="section-title">The details</h2>
-
         <div id="location" class="know-block">
           <p class="know-label" data-bind="locationHeading">The Venue</p>
           <p class="know-lead" data-bind="venueName">Dhankhar Farmhouse</p>
@@ -78,7 +77,6 @@
             <button type="button" class="btn btn-ghost" id="btn-copy">Copy Address</button>
           </div>
         </div>
-
         <div id="calendar" class="know-block">
           <p class="know-label">Add to calendar</p>
           <p class="know-copy" id="cal-note">An all-day reminder for <span id="cal-date" data-bind="longDate">Monday, 18 January 2027</span>.</p>
@@ -87,30 +85,20 @@
             <a class="btn btn-ghost" id="btn-gcal" href="#" target="_blank" rel="noopener noreferrer">Google Calendar</a>
           </div>
         </div>
-
         <div id="rsvp" class="know-block">
           <p class="know-label" data-bind="rsvp.heading">Kindly respond</p>
           <p class="rsvp-intro" data-bind="rsvp.intro">We would be honoured to know if you can join us.</p>
           <form id="rsvp-form" class="rsvp-card" novalidate>
             <div id="rsvp-form-card">
               <p class="form-error" id="rsvp-error" role="alert" hidden></p>
-              <label class="field">
-                <span>Your name</span>
-                <input id="rsvp-name" name="name" type="text" autocomplete="name" required>
-              </label>
-              <label class="field">
-                <span>Number of guests</span>
-                <input id="rsvp-guests" name="guests" type="number" min="1" max="20" value="1" required>
-              </label>
+              <label class="field"><span>Your name</span><input id="rsvp-name" name="name" type="text" autocomplete="name" required></label>
+              <label class="field"><span>Number of guests</span><input id="rsvp-guests" name="guests" type="number" min="1" max="20" value="1" required></label>
               <fieldset class="seg">
                 <legend>Will you attend?</legend>
                 <label><input type="radio" name="attending" value="yes" checked> Yes, with joy</label>
                 <label><input type="radio" name="attending" value="no"> Sadly, no</label>
               </fieldset>
-              <label class="field">
-                <span>Message <em>(optional)</em></span>
-                <textarea id="rsvp-message" name="message" rows="3"></textarea>
-              </label>
+              <label class="field"><span>Message <em>(optional)</em></span><textarea id="rsvp-message" name="message" rows="3"></textarea></label>
               <button type="submit" class="btn" id="rsvp-submit">Send RSVP</button>
             </div>
             <div id="rsvp-thanks" class="rsvp-thanks" hidden>
@@ -124,6 +112,7 @@
     <section id="route" class="route-hero" aria-labelledby="route-heading">
       <div class="route-stage">
         <div class="route-inner">
+          <img class="route-art" src="assets/art/route.webp" alt="A painted oval of a wedding gathering above a vintage blue car, inviting guests to see the route." width="652" height="1436">
           <a class="route-oval" href="https://maps.app.goo.gl/YmEde1wiVfAr88XcA" target="_blank" rel="noopener noreferrer" aria-label="See the route to Dhankhar Farmhouse. Opens in a new tab.">
             <span class="route-hint">Click to open the map</span>
             <span class="route-pin" aria-hidden="true">
@@ -142,54 +131,23 @@
         </div>
       </div>
     </section>
-  </div>
-<div class="teal-run">
-  <div class="damask-side damask-side-l" aria-hidden="true"></div>
-  <div class="damask-side damask-side-r" aria-hidden="true"></div>
 
-  <!-- Invite -->
-  <section id="invite" ...> ... </section>
-
-  <!-- Wedding -->
-  <section id="ceremony" ...> ... </section>
-
-  <!-- Details -->
-  <section id="know" ...> ... </section>
-
-  <!-- Route -->
-  <section id="route" ...> ... </section>
-
-  <!-- Blessings — MUST be inside teal-run -->
-  <section id="blessings" class="bless-hero" aria-labelledby="bless-heading">
-    <div class="bless-inner">
-      <h2 id="bless-heading" class="bless-title" data-bind="blessings.title">Blessings</h2>
-      <p class="bless-ornament" aria-hidden="true"></p>
-      <p class="bless-copy" data-bind="blessings.body">May the bride and groom be blessed with a lifetime of love, laughter and companionship. As they take the seven sacred pheras, may each vow bind their hearts closer and guide them through every season of life. May their home be filled with warmth, respect and understanding, their days with joy and their years with good health and prosperity. May they always be each other's strength in difficult times and greatest joy in happy ones, and may the blessings of their families and elders stay with them forever.</p>
-    </div>
-  </section>
-</div>
-<section id="route" class="route-hero" aria-labelledby="route-heading">
-  <div class="route-stage">
-    <div class="route-inner">
-      <img class="route-art" src="assets/art/route.webp" alt="A painted oval of a wedding gathering above a vintage blue car, inviting guests to see the route." width="652" height="1436">
-      <a class="route-oval" href="https://maps.app.goo.gl/YmEde1wiVfAr88XcA" target="_blank" rel="noopener noreferrer" aria-label="See the route to Dhankhar Farmhouse. Opens in a new tab.">
-        <span class="route-hint">Click to open the map</span>
-        <span class="route-pin" aria-hidden="true">
-          <span class="route-pin-pulse"></span>
-          <svg class="route-pin-icon" viewBox="0 0 24 24" focusable="false">
-            <circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.4"/>
-            <path fill="currentColor" d="M12 6.2c-2.3 0-4.1 1.8-4.1 4 0 3 4.1 7.6 4.1 7.6s4.1-4.6 4.1-7.6c0-2.2-1.8-4-4.1-4zm0 5.4a1.4 1.4 0 1 1 0-2.8 1.4 1.4 0 0 1 0 2.8z"/>
-          </svg>
-        </span>
-      </a>
-      <div class="route-caption">
-        <h2 id="route-heading" class="sr-only">See the route</h2>
-        <p class="route-venue" data-bind="venueName">Dhankhar Farmhouse</p>
-        <p class="route-address" data-bind="venueAddress">Jhajjar, Jhajjarrural, Haryana 124103</p>
+    <section id="blessings" class="bless-hero" aria-labelledby="bless-heading">
+      <div class="bless-inner">
+        <h2 id="bless-heading" class="bless-title" data-bind="blessings.title">Blessings</h2>
+        <p class="bless-ornament" aria-hidden="true"></p>
+        <p class="bless-copy" data-bind="blessings.body">May the bride and groom be blessed with a lifetime of love, laughter and companionship. As they take the seven sacred pheras, may each vow bind their hearts closer and guide them through every season of life. May their home be filled with warmth, respect and understanding, their days with joy and their years with good health and prosperity. May they always be each other's strength in difficult times and greatest joy in happy ones, and may the blessings of their families and elders stay with them forever.</p>
       </div>
-    </div>
+    </section>
+
+    <section id="follow" class="follow-hero" aria-labelledby="follow-heading">
+      <div class="follow-copy">
+        <h2 id="follow-heading" class="follow-title">Follow the action</h2>
+        <p class="follow-hashtag" id="follow-hashtag" hidden></p>
+      </div>
+    </section>
   </div>
-</section>
+
   <footer id="outro" class="countdown-hero">
     <div class="star-field" aria-hidden="true"></div>
     <img class="countdown-palace" src="assets/art/palace-night.webp" alt="A lit palace courtyard at night under a starry sky." width="1614" height="1365">
@@ -210,7 +168,6 @@
   </footer>
 
   <div id="toast" class="toast" role="status"></div>
-
   <script src="js/config.js"></script>
   <script src="js/app.js"></script>
 </body>
