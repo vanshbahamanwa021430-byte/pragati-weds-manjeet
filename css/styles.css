@@ -802,3 +802,44 @@ a { color: inherit; }
 .follow-hashtag {
   color: var(--cream) !important;
 }
+/* ---- Unified teal background for later sections ---- */
+
+/* Blessings */
+.teal-run .bless-hero,
+.bless-hero {
+  background: transparent;
+  background-image: none;
+  color: var(--cream);
+}
+
+.teal-run .bless-title,
+.bless-title,
+.teal-run .bless-copy,
+.bless-copy {
+  color: var(--cream);
+}
+
+.teal-run .bless-ornament,
+.bless-ornament {
+  background:
+    radial-gradient(circle at 50% 50%, var(--cream) 0 0.18rem, transparent 0.2rem),
+    linear-gradient(var(--cream), var(--cream)) left 0 top 50% / calc(50% - 0.5rem) 1px no-repeat,
+    linear-gradient(var(--cream), var(--cream)) right 0 top 50% / calc(50% - 0.5rem) 1px no-repeat;
+}
+
+/* Follow the action */
+.teal-run .follow-hero,
+.follow-hero {
+  background-color: #3e8a7e;
+  background-image: url("../assets/art/teal-texture.webp");
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+  color: var(--cream);
+}
+
+.teal-run .follow-title,
+.follow-title,
+.teal-run .follow-hashtag,
+.follow-hashtag {
+  color: var(--cream);
+}
