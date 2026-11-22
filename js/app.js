@@ -119,6 +119,15 @@
     '<circle cx="16" cy="18" r="3.2" fill="#FFF4C2" opacity=".8"/>' +
     '</svg>';
 
+  var LANTERN_PAPER = '<svg viewBox="0 0 40 56" aria-hidden="true">' +
+    '<defs><radialGradient id="lg" cx="50%" cy="40%" r="65%">' +
+    '<stop offset="0" stop-color="#FFF4C2"/><stop offset="0.45" stop-color="#FFB347"/><stop offset="1" stop-color="#E07800"/></radialGradient></defs>' +
+    '<ellipse cx="20" cy="9" rx="11" ry="3.2" fill="#E8A028"/>' +
+    '<path d="M9 9 C9 8, 31 8, 31 9 L33 40 C33 45, 7 45, 7 40 Z" fill="url(#lg)" stroke="#D4AF37" stroke-width="0.6"/>' +
+    '<ellipse cx="20" cy="40" rx="13" ry="3" fill="#CC7000"/>' +
+    '<ellipse cx="20" cy="23" rx="6.5" ry="9" fill="#FFF6C8" opacity=".65"/>' +
+    '</svg>';
+
   function paintStars() {
     $$(".star-field").forEach(function (field) {
       var count = 48;
@@ -134,31 +143,95 @@
     });
   }
 
+  var lanternLayers = [];
+
   function paintLanterns() {
+    lanternLayers = [];
     $$(".lantern-field").forEach(function (field) {
+      field.innerHTML = "";
+      var desktop = window.matchMedia("(min-width: 1024px)").matches;
       var count = parseInt(field.getAttribute("data-lanterns"), 10) || 12;
-      if (reduceMotion) count = Math.min(count, 8);
       var bias = field.getAttribute("data-lantern-bias") === "sides";
+      if (desktop) {
+        count = 36;
+        bias = false;
+      }
+      if (reduceMotion) count = Math.min(count, desktop ? 16 : 8);
+      var far = document.createElement("div");
+      var mid = document.createElement("div");
+      var near = document.createElement("div");
+      far.className = "lantern-layer lantern-layer--far";
+      mid.className = "lantern-layer lantern-layer--mid";
+      near.className = "lantern-layer lantern-layer--near";
+      far.setAttribute("data-depth", "0.16");
+      mid.setAttribute("data-depth", "0.32");
+      near.setAttribute("data-depth", "0.55");
+      field.appendChild(far);
+      field.appendChild(mid);
+      field.appendChild(near);
+      lanternLayers.push(far, mid, near);
       for (var i = 0; i < count; i++) {
         var el = document.createElement("div");
         el.className = "lantern";
         var id = "lg" + i + Math.random().toString(36).slice(2, 6);
-        el.innerHTML = LANTERN_SVG.replace(/id="lg"/g, 'id="' + id + '"').replace(/url\(#lg\)/g, "url(#" + id + ")");
+        var svg = (desktop && i % 3 !== 2) ? LANTERN_PAPER : LANTERN_SVG;
+        el.innerHTML = svg.replace(/id="lg"/g, 'id="' + id + '"').replace(/url\(#lg\)/g, "url(#" + id + ")");
         var x;
         if (bias) {
           x = (i % 2 === 0) ? (Math.random() * 14) : (86 + Math.random() * 13);
         } else {
-          x = Math.random() * 100;
+          x = 2 + Math.random() * 96;
         }
+        var size = desktop ? (40 + Math.random() * 70) : (16 + Math.random() * 18);
+        /* Sky band of the stitched hero. The name mask already clears 14–23%. */
+        var startY = desktop ? (7 + Math.random() * 16) : (5 + Math.random() * 28);
+        var restY = startY;
+        if (restY > 14 && restY < 23.5) restY = (Math.random() < 0.5) ? (8 + Math.random() * 5) : (24 + Math.random() * 6);
         el.style.setProperty("--x", x + "%");
-        el.style.setProperty("--size", (16 + Math.random() * 18) + "px");
+        el.style.setProperty("--size", size + "px");
         el.style.setProperty("--dur", (16 + Math.random() * 14) + "s");
         el.style.setProperty("--delay", (-Math.random() * 18) + "s");
-        el.style.setProperty("--sway", (Math.random() * 50 - 25) + "px");
-        el.style.setProperty("--rest-y", (8 + Math.random() * 60) + "%");
-        field.appendChild(el);
+        el.style.setProperty("--sway", (Math.random() * (desktop ? 36 : 50) - (desktop ? 18 : 25)) + "px");
+        el.style.setProperty("--start-y", startY + "%");
+        el.style.setProperty("--rest-y", restY + "%");
+        var dest = desktop
+          ? (size < 62 ? far : size < 88 ? mid : near)
+          : (size < 22 ? far : size < 28 ? mid : near);
+        dest.appendChild(el);
       }
     });
+    if (typeof updateLanternParallax === "function") updateLanternParallax();
+  }
+
+  var updateLanternParallax = function () {};
+
+  function setupLanternParallax() {
+    if (reduceMotion) {
+      updateLanternParallax = function () {
+        lanternLayers.forEach(function (layer) {
+          layer.style.transform = "translate3d(0,0,0)";
+        });
+      };
+      updateLanternParallax();
+      return;
+    }
+    var ticking = false;
+    updateLanternParallax = function () {
+      ticking = false;
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      lanternLayers.forEach(function (layer) {
+        var depth = parseFloat(layer.getAttribute("data-depth")) || 0.3;
+        layer.style.transform = "translate3d(0," + (-y * depth).toFixed(2) + "px,0)";
+      });
+    };
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(updateLanternParallax);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    updateLanternParallax();
   }
 
   /* ---- Parallax (transform only) ---- */
@@ -379,6 +452,38 @@
     }
   }
 
+
+  function setupThingsToKnow() {
+    var section = $("#things");
+    if (!section) return;
+    var t = cfg.thingsToKnow || {};
+    var weather = (t.weather || "").trim();
+    var parking = (t.parking || "").trim();
+    section.hidden = !(weather || parking);
+    var wEl = $("#things-weather");
+    var pEl = $("#things-parking");
+    if (wEl) {
+      wEl.hidden = !weather;
+      var copy = wEl.querySelector(".things-item-copy");
+      if (copy) copy.textContent = weather;
+    }
+    if (pEl) {
+      pEl.hidden = !parking;
+      var copy = pEl.querySelector(".things-item-copy");
+      if (copy) copy.textContent = parking;
+    }
+  }
+
+  function setupFollow() {
+    var el = $("#follow-hashtag");
+    if (!el) return;
+    var tag = (cfg.hashtag || "").trim().replace(/^#/, "");
+    if (!tag) { el.hidden = true; return; }
+    el.hidden = false;
+    var href = "https://www.instagram.com/explore/tags/" + encodeURIComponent(tag) + "/";
+    el.innerHTML = 'Use <a href="' + href + '" target="_blank" rel="noopener noreferrer">#' + tag + "</a>";
+  }
+
   /* ---- Location ---- */
 
   function mapsQuery() {
@@ -387,7 +492,7 @@
 
   function setupLocation() {
     var dirHref = cfg.mapsUrl || ("https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(mapsQuery()));
-    $$("#btn-directions, #btn-directions-2, a.route-link").forEach(function (dir) {
+    $$("#btn-directions, #btn-directions-2, a.route-link, a.route-oval").forEach(function (dir) {
       dir.href = dirHref;
     });
     var copy = $("#btn-copy");
@@ -513,12 +618,23 @@
     fillDates();
     paintStars();
     paintLanterns();
+    setupLanternParallax();
     setupParallax();
     setupMusic();
     setupCountdown();
     setupCalendar();
     setupLocation();
+    setupThingsToKnow();
+    setupFollow();
     setupRsvp();
+    var lanternMql = window.matchMedia("(min-width: 1024px)");
+    var lastDesktop = lanternMql.matches;
+    window.addEventListener("resize", function () {
+      if (lanternMql.matches === lastDesktop) return;
+      lastDesktop = lanternMql.matches;
+      paintLanterns();
+      updateLanternParallax();
+    });
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

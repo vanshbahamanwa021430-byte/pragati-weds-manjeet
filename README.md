@@ -18,7 +18,7 @@ The painted backgrounds, oval miniature and side borders are taken from the purc
 
 ## Music
 
-A soft shehnai track (CC0) starts after the first tap or scroll. Guests can mute it at any time. See `CREDITS.md` and `assets/MUSIC-LICENSE.txt`.
+London Thumakda (from *Queen*) starts after the first tap or scroll. Guests can mute it at any time. See `CREDITS.md` and `assets/MUSIC-LICENSE.txt`. This is not a free-licence track; it is used at the host’s request.
 
 ## Hosting
 

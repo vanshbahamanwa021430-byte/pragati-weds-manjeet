@@ -1,16 +1,17 @@
-Hindu_Wedding_Ceremony_Music
-============================
+London Thumakda (From "Queen")
+==============================
 
 File served as: assets/music.mp3
-Original title: Hindu_Wedding_Ceremony_Music.mp3
-Author: bobv2
-Source: https://freesound.org/people/bobv2/sounds/395024/
-Licence: CC0 1.0 Universal
-         https://creativecommons.org/publicdomain/zero/1.0/
+Title: London Thumakda (From "Queen")
+Artists: Labh Janjua, Sonu Kakkar, Neha Kakkar
+Music: Amit Trivedi
+Source: Official T-Series audio
+        https://www.youtube.com/watch?v=N5bELC8MXeU
 
-You may copy, modify, distribute and perform this sound, even for
-commercial purposes, without asking permission. Attribution is not
-required under CC0; a credit is included on the invitation as a courtesy.
+This recording is used at the invitation host's request. It is not a
+Creative Commons, CC0, or public-domain work. Rights remain with the
+copyright holders.
 
-The copy in this folder has a slightly lower level and short fades at
-the start and end, for use as looping background music. See CREDITS.md.
+The copy in this folder has a short fade at the start and end, and a
+brief tail of silence removed, for use as looping background music.
+See CREDITS.md.
