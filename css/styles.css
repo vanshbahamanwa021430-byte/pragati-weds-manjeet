@@ -803,85 +803,16 @@ a { color: inherit; }
   color: var(--cream) !important;
 }
 /* ---- Unified teal background for later sections ---- */
-
-/* Blessings */
-.teal-run .bless-hero,
-.bless-hero {
-  background: transparent;
-  background-image: none;
-  color: var(--cream);
-}
-
-.teal-run .bless-title,
-.bless-title,
-.teal-run .bless-copy,
-.bless-copy {
-  color: var(--cream);
-}
-
-.teal-run .bless-ornament,
-.bless-ornament {
-  background:
-    radial-gradient(circle at 50% 50%, var(--cream) 0 0.18rem, transparent 0.2rem),
-    linear-gradient(var(--cream), var(--cream)) left 0 top 50% / calc(50% - 0.5rem) 1px no-repeat,
-    linear-gradient(var(--cream), var(--cream)) right 0 top 50% / calc(50% - 0.5rem) 1px no-repeat;
-}
-
-/* Follow the action */
-.teal-run .follow-hero,
+.bless-hero,
+.route-hero,
 .follow-hero {
-  background-color: #3e8a7e;
-  background-image: url("../assets/art/teal-texture.webp");
-  background-size: 100% auto;
-  background-repeat: repeat-y;
-  color: var(--cream);
-}
-
-.teal-run .follow-title,
-.follow-title,
-.teal-run .follow-hashtag,
-.follow-hashtag {
-  color: var(--cream);
-}
-/* ---- Restore original color psychology ---- */
-
-/* Blessings = pink (romance) */
-.bless-hero {
-  background-color: #d9a0b8 !important;
-  background-image: url("../assets/art/pink-texture.webp") !important;
-  background-size: 100% auto !important;
-  background-repeat: repeat-y !important;
-  color: #f7efe4 !important;
+  background: transparent !important;
+  background-image: none !important;
+  color: var(--cream) !important;
 }
 
 .bless-title,
-.bless-copy {
-  color: #f7efe4 !important;
-}
-
-.bless-ornament {
-  background:
-    radial-gradient(circle at 50% 50%, #f3e2b0 0 0.18rem, transparent 0.2rem),
-    linear-gradient(#f3e2b0, #f3e2b0) left 0 top 50% / calc(50% - 0.5rem) 1px no-repeat,
-    linear-gradient(#f3e2b0, #f3e2b0) right 0 top 50% / calc(50% - 0.5rem) 1px no-repeat !important;
-}
-
-/* Follow the Action = yellow (joy / energy) */
-.follow-hero {
-  background-color: #d8c84a !important;
-  background-image: url("../assets/art/yellow-texture.webp") !important;
-  background-size: cover !important;
-  background-position: center top !important;
-  color: #1a1a12 !important;
-}
-
-.follow-title,
-.follow-hashtag {
-  color: #1a1a12 !important;
-}
-
-/* Route stays teal */
-.route-hero {
-  background: #3e8a7e !important;
+.bless-copy,
+.follow-title {
   color: var(--cream) !important;
 }
