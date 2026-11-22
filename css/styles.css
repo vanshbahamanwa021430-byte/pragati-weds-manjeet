@@ -754,3 +754,22 @@ a { color: inherit; }
 .bless-inner {
   padding: 3.2rem 1.7rem 3.4rem;
 }
+/* Force blessings to use teal background */
+.bless-hero {
+  background: #3e8a7e url("../assets/art/teal-texture.webp") !important;
+  background-size: 100% auto !important;
+  background-repeat: repeat-y !important;
+  color: #f7efe4 !important;
+}
+
+.bless-title,
+.bless-copy {
+  color: #f7efe4 !important;
+}
+
+.bless-ornament {
+  background:
+    radial-gradient(circle at 50% 50%, #f7efe4 0 0.18rem, transparent 0.2rem),
+    linear-gradient(#f7efe4, #f7efe4) left 0 top 50% / calc(50% - 0.5rem) 1px no-repeat,
+    linear-gradient(#f7efe4, #f7efe4) right 0 top 50% / calc(50% - 0.5rem) 1px no-repeat !important;
+}
