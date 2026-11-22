@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#152A4A">
+  <meta name="description" content="You are invited to the wedding of Pragati and Manjeet.">
+  <title>Pragati weds Manjeet</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#invite">Skip to invitation</a>
+
+  <div class="invite-chrome" id="chrome">
+    <p class="mono-mark">P &amp; M</p>
+    <button type="button" id="music-toggle" class="music-toggle is-muted" aria-pressed="false" aria-label="Play background music">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 5V4L8 9H4zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>
+    </button>
+  </div>
+
+  <header id="intro" class="hero">
+    <div class="hero-stage">
+      <img class="hero-art" src="assets/art/hero.webp" alt="A painted night sky of lanterns over a palace balcony and courtyard, with a fountain and Ganesha below." width="1888" height="6822">
+      <div class="lantern-field" data-lanterns="10" data-lantern-bias="sides" aria-hidden="true"></div>
+      <h1 class="hero-stack">
+        <span class="hero-name" data-bind="bride.firstName">Pragati</span>
+        <span class="hero-weds">Weds</span>
+        <span class="hero-name" data-bind="groom.firstName">Manjeet</span>
+      </h1>
+    </div>
+  </header>
+
+  <div class="teal-run">
+    <div class="damask-side damask-side-l" aria-hidden="true"></div>
+    <div class="damask-side damask-side-r" aria-hidden="true"></div>
+
+  <section id="invite" class="band formal-invite" aria-labelledby="invite-heading">
+    <div class="wrap">
+      <p class="invite-kicker">A wedding invitation</p>
+      <h2 id="invite-heading" class="invite-word">Invite</h2>
+      <p class="couple-line">
+        <span data-bind="bride.firstName">Pragati</span>
+        <span class="ampersand">&amp;</span>
+        <span data-bind="groom.firstName">Manjeet</span>
+      </p>
+      <p class="request" data-bind="requestLine">Request the honour of your presence at their wedding</p>
+    </div>
+  </section>
+
+  <section id="ceremony" class="band ceremony" aria-labelledby="ceremony-heading">
+    <div class="wrap">
+      <figure class="oval-frame">
+        <img src="assets/art/oval-shaadi.webp" alt="A miniature painting of the couple seated together in floral garlands." width="1570" height="1022">
+      </figure>
+      <h2 id="ceremony-heading" class="event-title" data-bind="ceremony.title">The Wedding</h2>
+      <p class="event-tag" data-bind="ceremony.tagline">Shaadi · Pheras</p>
+      <p class="event-when" id="ceremony-when">Monday, 18 January 2027</p>
+      <p class="event-where"><span data-bind="venueName">Dhankhar Farmhouse</span></p>
+      <p class="event-note" data-bind="ceremony.note">Join us as the couple take their vows and the seven pheras.</p>
+      <p class="route-line">
+        <a id="btn-directions" class="route-link" href="https://maps.app.goo.gl/YmEde1wiVfAr88XcA" target="_blank" rel="noopener noreferrer">See the route</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="know" class="band know" aria-labelledby="know-heading">
+    <div class="wrap">
+      <h2 id="know-heading" class="section-title">Things to know</h2>
+
+      <div id="location" class="know-block">
+        <p class="know-label" data-bind="locationHeading">The Venue</p>
+        <p class="know-lead" data-bind="venueName">Dhankhar Farmhouse</p>
+        <p class="know-copy" id="venue-address" data-bind="venueAddress">Jhajjar, Jhajjarrural, Haryana 124103</p>
+        <div class="btn-row">
+          <a class="btn" id="btn-directions-2" href="https://maps.app.goo.gl/YmEde1wiVfAr88XcA" target="_blank" rel="noopener noreferrer">Get Directions</a>
+          <button type="button" class="btn btn-ghost" id="btn-copy">Copy Address</button>
+        </div>
+      </div>
+
+      <div id="calendar" class="know-block">
+        <p class="know-label">Add to calendar</p>
+        <p class="know-copy" id="cal-note">An all-day reminder for <span id="cal-date" data-bind="longDate">Monday, 18 January 2027</span>.</p>
+        <div class="btn-row">
+          <button type="button" class="btn" id="btn-ics">Download .ics</button>
+          <a class="btn btn-ghost" id="btn-gcal" href="#" target="_blank" rel="noopener noreferrer">Google Calendar</a>
+        </div>
+      </div>
+
+      <div id="rsvp" class="know-block">
+        <p class="know-label" data-bind="rsvp.heading">Kindly respond</p>
+        <p class="rsvp-intro" data-bind="rsvp.intro">We would be honoured to know if you can join us.</p>
+        <form id="rsvp-form" class="rsvp-card" novalidate>
+          <div id="rsvp-form-card">
+            <p class="form-error" id="rsvp-error" role="alert" hidden></p>
+            <label class="field">
+              <span>Your name</span>
+              <input id="rsvp-name" name="name" type="text" autocomplete="name" required>
+            </label>
+            <label class="field">
+              <span>Number of guests</span>
+              <input id="rsvp-guests" name="guests" type="number" min="1" max="20" value="1" required>
+            </label>
+            <fieldset class="seg">
+              <legend>Will you attend?</legend>
+              <label><input type="radio" name="attending" value="yes" checked> Yes, with joy</label>
+              <label><input type="radio" name="attending" value="no"> Sadly, no</label>
+            </fieldset>
+            <label class="field">
+              <span>Message <em>(optional)</em></span>
+              <textarea id="rsvp-message" name="message" rows="3"></textarea>
+            </label>
+            <button type="submit" class="btn" id="rsvp-submit">Send RSVP</button>
+          </div>
+          <div id="rsvp-thanks" class="rsvp-thanks" hidden>
+            <p id="rsvp-thanks-body">Thank you. We have received your reply.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer id="outro" class="band outro">
+    <div class="wrap outro-copy">
+      <p class="outro-kicker">The countdown begins</p>
+      <p class="see-you" id="see-you">See you on 18 January 2027</p>
+      <p class="day-here" id="day-here" hidden>The wedding day is here.</p>
+      <div class="countdown" id="countdown" role="timer" aria-live="polite" aria-atomic="true">
+        <div class="count-unit"><span class="count-num" data-unit="days">00</span><span class="count-label">Days</span></div>
+        <div class="count-unit"><span class="count-num" data-unit="hours">00</span><span class="count-label">Hours</span></div>
+        <div class="count-unit"><span class="count-num" data-unit="mins">00</span><span class="count-label">Mins</span></div>
+        <div class="count-unit"><span class="count-num" data-unit="secs">00</span><span class="count-label">Secs</span></div>
+      </div>
+      <p class="blessing" data-bind="blessing">With love and blessings</p>
+      <p class="footer-names"><span data-bind="bride.firstName">Pragati</span> &amp; <span data-bind="groom.firstName">Manjeet</span></p>
+      <p class="music-credit" data-bind="music.credit"></p>
+    </div>
+  </footer>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

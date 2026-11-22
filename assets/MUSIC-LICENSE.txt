@@ -1,0 +1,16 @@
+Hindu_Wedding_Ceremony_Music
+============================
+
+File served as: assets/music.mp3
+Original title: Hindu_Wedding_Ceremony_Music.mp3
+Author: bobv2
+Source: https://freesound.org/people/bobv2/sounds/395024/
+Licence: CC0 1.0 Universal
+         https://creativecommons.org/publicdomain/zero/1.0/
+
+You may copy, modify, distribute and perform this sound, even for
+commercial purposes, without asking permission. Attribution is not
+required under CC0; a credit is included on the invitation as a courtesy.
+
+The copy in this folder has a slightly lower level and short fades at
+the start and end, for use as looping background music. See CREDITS.md.
