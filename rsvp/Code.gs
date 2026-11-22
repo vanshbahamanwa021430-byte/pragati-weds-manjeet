@@ -11,7 +11,7 @@
  */
 
 /* ---- Edit these before you deploy -------------------------------- */
-var OWNER_EMAIL = 'YOUR_EMAIL_HERE';  // RSVP notifications go here
+var OWNER_EMAIL = 'vanshbahamanwa021430@gmail.com';  // RSVP notifications go here
 var SHEET_NAME = 'RSVPs';             // tab name in the spreadsheet
 /* ------------------------------------------------------------------ */
 
