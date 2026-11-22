@@ -790,3 +790,15 @@ a { color: inherit; }
     linear-gradient(var(--cream), var(--cream)) left 0 top 50% / calc(50% - 0.5rem) 1px no-repeat,
     linear-gradient(var(--cream), var(--cream)) right 0 top 50% / calc(50% - 0.5rem) 1px no-repeat !important;
 }
+/* ---- Follow the action: match teal background ---- */
+.follow-hero {
+  background: #3e8a7e url("../assets/art/teal-texture.webp") !important;
+  background-size: 100% auto !important;
+  background-repeat: repeat-y !important;
+  color: var(--cream) !important;
+}
+
+.follow-title,
+.follow-hashtag {
+  color: var(--cream) !important;
+}
