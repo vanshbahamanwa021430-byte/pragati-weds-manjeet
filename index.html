@@ -64,63 +64,63 @@
         </p>
       </div>
     </section>
+
+    <section id="know" class="band know" aria-labelledby="know-heading">
+      <div class="wrap">
+        <h2 id="know-heading" class="section-title">The details</h2>
+
+        <div id="location" class="know-block">
+          <p class="know-label" data-bind="locationHeading">The Venue</p>
+          <p class="know-lead" data-bind="venueName">Dhankhar Farmhouse</p>
+          <p class="know-copy" id="venue-address" data-bind="venueAddress">Jhajjar, Jhajjarrural, Haryana 124103</p>
+          <div class="btn-row">
+            <a class="btn" id="btn-directions-2" href="https://maps.app.goo.gl/YmEde1wiVfAr88XcA" target="_blank" rel="noopener noreferrer">Get Directions</a>
+            <button type="button" class="btn btn-ghost" id="btn-copy">Copy Address</button>
+          </div>
+        </div>
+
+        <div id="calendar" class="know-block">
+          <p class="know-label">Add to calendar</p>
+          <p class="know-copy" id="cal-note">An all-day reminder for <span id="cal-date" data-bind="longDate">Monday, 18 January 2027</span>.</p>
+          <div class="btn-row">
+            <button type="button" class="btn" id="btn-ics">Download .ics</button>
+            <a class="btn btn-ghost" id="btn-gcal" href="#" target="_blank" rel="noopener noreferrer">Google Calendar</a>
+          </div>
+        </div>
+
+        <div id="rsvp" class="know-block">
+          <p class="know-label" data-bind="rsvp.heading">Kindly respond</p>
+          <p class="rsvp-intro" data-bind="rsvp.intro">We would be honoured to know if you can join us.</p>
+          <form id="rsvp-form" class="rsvp-card" novalidate>
+            <div id="rsvp-form-card">
+              <p class="form-error" id="rsvp-error" role="alert" hidden></p>
+              <label class="field">
+                <span>Your name</span>
+                <input id="rsvp-name" name="name" type="text" autocomplete="name" required>
+              </label>
+              <label class="field">
+                <span>Number of guests</span>
+                <input id="rsvp-guests" name="guests" type="number" min="1" max="20" value="1" required>
+              </label>
+              <fieldset class="seg">
+                <legend>Will you attend?</legend>
+                <label><input type="radio" name="attending" value="yes" checked> Yes, with joy</label>
+                <label><input type="radio" name="attending" value="no"> Sadly, no</label>
+              </fieldset>
+              <label class="field">
+                <span>Message <em>(optional)</em></span>
+                <textarea id="rsvp-message" name="message" rows="3"></textarea>
+              </label>
+              <button type="submit" class="btn" id="rsvp-submit">Send RSVP</button>
+            </div>
+            <div id="rsvp-thanks" class="rsvp-thanks" hidden>
+              <p id="rsvp-thanks-body">Thank you. We have received your reply.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
   </div>
-
-  <section id="know" class="band know" aria-labelledby="know-heading">
-    <div class="wrap">
-      <h2 id="know-heading" class="section-title">The details</h2>
-
-      <div id="location" class="know-block">
-        <p class="know-label" data-bind="locationHeading">The Venue</p>
-        <p class="know-lead" data-bind="venueName">Dhankhar Farmhouse</p>
-        <p class="know-copy" id="venue-address" data-bind="venueAddress">Jhajjar, Jhajjarrural, Haryana 124103</p>
-        <div class="btn-row">
-          <a class="btn" id="btn-directions-2" href="https://maps.app.goo.gl/YmEde1wiVfAr88XcA" target="_blank" rel="noopener noreferrer">Get Directions</a>
-          <button type="button" class="btn btn-ghost" id="btn-copy">Copy Address</button>
-        </div>
-      </div>
-
-      <div id="calendar" class="know-block">
-        <p class="know-label">Add to calendar</p>
-        <p class="know-copy" id="cal-note">An all-day reminder for <span id="cal-date" data-bind="longDate">Monday, 18 January 2027</span>.</p>
-        <div class="btn-row">
-          <button type="button" class="btn" id="btn-ics">Download .ics</button>
-          <a class="btn btn-ghost" id="btn-gcal" href="#" target="_blank" rel="noopener noreferrer">Google Calendar</a>
-        </div>
-      </div>
-
-      <div id="rsvp" class="know-block">
-        <p class="know-label" data-bind="rsvp.heading">Kindly respond</p>
-        <p class="rsvp-intro" data-bind="rsvp.intro">We would be honoured to know if you can join us.</p>
-        <form id="rsvp-form" class="rsvp-card" novalidate>
-          <div id="rsvp-form-card">
-            <p class="form-error" id="rsvp-error" role="alert" hidden></p>
-            <label class="field">
-              <span>Your name</span>
-              <input id="rsvp-name" name="name" type="text" autocomplete="name" required>
-            </label>
-            <label class="field">
-              <span>Number of guests</span>
-              <input id="rsvp-guests" name="guests" type="number" min="1" max="20" value="1" required>
-            </label>
-            <fieldset class="seg">
-              <legend>Will you attend?</legend>
-              <label><input type="radio" name="attending" value="yes" checked> Yes, with joy</label>
-              <label><input type="radio" name="attending" value="no"> Sadly, no</label>
-            </fieldset>
-            <label class="field">
-              <span>Message <em>(optional)</em></span>
-              <textarea id="rsvp-message" name="message" rows="3"></textarea>
-            </label>
-            <button type="submit" class="btn" id="rsvp-submit">Send RSVP</button>
-          </div>
-          <div id="rsvp-thanks" class="rsvp-thanks" hidden>
-            <p id="rsvp-thanks-body">Thank you. We have received your reply.</p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
 
   <section id="route" class="route-hero" aria-labelledby="route-heading">
     <div class="route-stage">
