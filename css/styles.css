@@ -773,3 +773,20 @@ a { color: inherit; }
     linear-gradient(#f7efe4, #f7efe4) left 0 top 50% / calc(50% - 0.5rem) 1px no-repeat,
     linear-gradient(#f7efe4, #f7efe4) right 0 top 50% / calc(50% - 0.5rem) 1px no-repeat !important;
 }
+.bless-hero {
+  background: transparent !important;
+  background-image: none !important;
+  color: var(--cream) !important;
+}
+
+.bless-title,
+.bless-copy {
+  color: var(--cream) !important;
+}
+
+.bless-ornament {
+  background:
+    radial-gradient(circle at 50% 50%, var(--cream) 0 0.18rem, transparent 0.2rem),
+    linear-gradient(var(--cream), var(--cream)) left 0 top 50% / calc(50% - 0.5rem) 1px no-repeat,
+    linear-gradient(var(--cream), var(--cream)) right 0 top 50% / calc(50% - 0.5rem) 1px no-repeat !important;
+}
