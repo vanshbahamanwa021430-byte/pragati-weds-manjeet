@@ -36,109 +36,35 @@
     <div class="damask-side damask-side-l" aria-hidden="true"></div>
     <div class="damask-side damask-side-r" aria-hidden="true"></div>
 
-  <section id="invite" class="band formal-invite" aria-labelledby="invite-heading">
-    <div class="wrap">
-      <p class="invite-kicker">A wedding invitation</p>
-      <h2 id="invite-heading" class="invite-word">Invite</h2>
-      <p class="couple-line">
-        <span data-bind="bride.firstName">Pragati</span>
-        <span class="ampersand">&amp;</span>
-        <span data-bind="groom.firstName">Manjeet</span>
-      </p>
-      <p class="request" data-bind="requestLine">Request the honour of your presence at their wedding</p>
-    </div>
-  </section>
-
-  <section id="ceremony" class="band ceremony" aria-labelledby="ceremony-heading">
-    <div class="wrap">
-      <figure class="oval-frame">
-        <img src="assets/art/oval-shaadi.webp" alt="A miniature painting of the couple seated together in floral garlands." width="1570" height="1022">
-      </figure>
-      <h2 id="ceremony-heading" class="event-title" data-bind="ceremony.title">The Wedding</h2>
-      <p class="event-tag" data-bind="ceremony.tagline">Shaadi · Pheras</p>
-      <p class="event-when" id="ceremony-when">Monday, 18 January 2027</p>
-      <p class="event-where"><span data-bind="venueName">Dhankhar Farmhouse</span></p>
-      <p class="event-note" data-bind="ceremony.note">Join us as the couple take their vows and the seven pheras.</p>
-      <p class="route-line">
-        <a id="btn-directions" class="route-link" href="https://maps.app.goo.gl/YmEde1wiVfAr88XcA" target="_blank" rel="noopener noreferrer">See the route</a>
-      </p>
-    </div>
-  </section>
-  </div>
-
-  <section id="blessings" class="bless-hero" aria-labelledby="bless-heading">
-    <div class="bless-inner">
-      <h2 id="bless-heading" class="bless-title" data-bind="blessings.title">Blessings</h2>
-      <p class="bless-ornament" aria-hidden="true"></p>
-      <p class="bless-copy" data-bind="blessings.body">May the bride and groom be blessed with a lifetime of love, laughter and companionship. As they take the seven sacred pheras, may each vow bind their hearts closer and guide them through every season of life. May their home be filled with warmth, respect and understanding, their days with joy and their years with good health and prosperity. May they always be each other's strength in difficult times and greatest joy in happy ones, and may the blessings of their families and elders stay with them forever.</p>
-     <div class="bless-frame-wrap">
-  <img class="bless-frame" src="assets/art/frame-note.webp" alt="An ornate cream floral frame filled with a gold floral medallion." width="915" height="1359">
-   </div>
-    </div>
-  </section>
-
-  <section id="route" class="route-hero" aria-labelledby="route-heading">
-    <div class="route-stage">
-      <div class="route-inner">
-        <img class="route-art" src="assets/art/route.webp" alt="A painted oval of a wedding gathering above a vintage blue car, inviting guests to see the route." width="652" height="1436">
-        <a class="route-oval" href="https://maps.app.goo.gl/YmEde1wiVfAr88XcA" target="_blank" rel="noopener noreferrer" aria-label="See the route to Dhankhar Farmhouse. Opens in a new tab.">
-          <span class="route-hint">Click to open the map</span>
-          <span class="route-pin" aria-hidden="true">
-            <span class="route-pin-pulse"></span>
-            <svg class="route-pin-icon" viewBox="0 0 24 24" focusable="false">
-              <circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.4"/>
-              <path fill="currentColor" d="M12 6.2c-2.3 0-4.1 1.8-4.1 4 0 3 4.1 7.6 4.1 7.6s4.1-4.6 4.1-7.6c0-2.2-1.8-4-4.1-4zm0 5.4a1.4 1.4 0 1 1 0-2.8 1.4 1.4 0 0 1 0 2.8z"/>
-            </svg>
-          </span>
-        </a>
-        <div class="route-caption">
-          <h2 id="route-heading" class="sr-only">See the route</h2>
-          <p class="route-venue" data-bind="venueName">Dhankhar Farmhouse</p>
-          <p class="route-address" data-bind="venueAddress">Jhajjar, Jhajjarrural, Haryana 124103</p>
-        </div>
+    <section id="invite" class="band formal-invite" aria-labelledby="invite-heading">
+      <div class="wrap">
+        <p class="invite-kicker">A wedding invitation</p>
+        <h2 id="invite-heading" class="invite-word">Invite</h2>
+        <p class="couple-line">
+          <span data-bind="bride.firstName">Pragati</span>
+          <span class="ampersand">&amp;</span>
+          <span data-bind="groom.firstName">Manjeet</span>
+        </p>
+        <p class="request" data-bind="requestLine">Request the honour of your presence at their wedding</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="follow" class="follow-hero" aria-labelledby="follow-heading">
-    <div class="follow-copy">
-      <h2 id="follow-heading" class="follow-title">Follow the action</h2>
-      <p class="follow-hashtag" id="follow-hashtag" hidden></p>
-    </div>
-    <img class="follow-car" src="assets/art/car-follow.webp" alt="A painted teal vintage car." width="1020" height="780">
-  </section>
-
-  <section id="things" class="things-hero" hidden aria-labelledby="things-heading">
-    <img class="things-car" src="assets/art/car-things.webp" alt="" width="1020" height="492">
-    <div class="things-body wrap">
-      <h2 id="things-heading" class="things-title">Things to know</h2>
-      <p class="things-intro" data-bind="thingsToKnow.intro">To help you feel at ease and enjoy every moment of the celebrations, we have gathered a few thoughtful details we would love for you to know before the big day.</p>
-      <ul class="things-list">
-        <li id="things-weather" class="things-item" hidden>
-          <span class="things-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="8" fill="none" stroke="currentColor" stroke-width="1.8"/><g stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M24 6 v5"/><path d="M24 37 v5"/><path d="M6 24 h5"/><path d="M37 24 h5"/><path d="M11.2 11.2 l3.5 3.5"/><path d="M33.3 33.3 l3.5 3.5"/><path d="M11.2 36.8 l3.5-3.5"/><path d="M33.3 14.7 l3.5-3.5"/></g></svg>
-          </span>
-          <div>
-            <p class="things-item-label">Weather</p>
-            <p class="things-item-copy"></p>
-          </div>
-        </li>
-        <li id="things-parking" class="things-item" hidden>
-          <span class="things-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M8 30 v4 h4 v-2 h24 v2 h4 v-4"/><path d="M10 30 l4-12 h20 l4 12"/><circle cx="16" cy="30" r="3"/><circle cx="32" cy="30" r="3"/></svg>
-          </span>
-          <div>
-            <p class="things-item-label">Parking</p>
-            <p class="things-item-copy"></p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <div class="teal-run">
-    <div class="damask-side damask-side-l" aria-hidden="true"></div>
-    <div class="damask-side damask-side-r" aria-hidden="true"></div>
+    <section id="ceremony" class="band ceremony" aria-labelledby="ceremony-heading">
+      <div class="wrap">
+        <figure class="oval-frame">
+          <img src="assets/art/oval-shaadi.webp" alt="A miniature painting of the couple seated together in floral garlands." width="1570" height="1022">
+        </figure>
+        <h2 id="ceremony-heading" class="event-title" data-bind="ceremony.title">The Wedding</h2>
+        <p class="event-tag" data-bind="ceremony.tagline">Shaadi · Pheras</p>
+        <p class="event-when" id="ceremony-when">Monday, 18 January 2027</p>
+        <p class="event-where"><span data-bind="venueName">Dhankhar Farmhouse</span></p>
+        <p class="event-note" data-bind="ceremony.note">Join us as the couple take their vows and the seven pheras.</p>
+        <p class="route-line">
+          <a id="btn-directions" class="route-link" href="https://maps.app.goo.gl/YmEde1wiVfAr88XcA" target="_blank" rel="noopener noreferrer">See the route</a>
+        </p>
+      </div>
+    </section>
+  </div>
 
   <section id="know" class="band know" aria-labelledby="know-heading">
     <div class="wrap">
@@ -195,7 +121,45 @@
       </div>
     </div>
   </section>
-  </div>
+
+  <section id="route" class="route-hero" aria-labelledby="route-heading">
+    <div class="route-stage">
+      <div class="route-inner">
+        <img class="route-art" src="assets/art/route.webp" alt="A painted oval of a wedding gathering above a vintage blue car, inviting guests to see the route." width="652" height="1436">
+        <a class="route-oval" href="https://maps.app.goo.gl/YmEde1wiVfAr88XcA" target="_blank" rel="noopener noreferrer" aria-label="See the route to Dhankhar Farmhouse. Opens in a new tab.">
+          <span class="route-hint">Click to open the map</span>
+          <span class="route-pin" aria-hidden="true">
+            <span class="route-pin-pulse"></span>
+            <svg class="route-pin-icon" viewBox="0 0 24 24" focusable="false">
+              <circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.4"/>
+              <path fill="currentColor" d="M12 6.2c-2.3 0-4.1 1.8-4.1 4 0 3 4.1 7.6 4.1 7.6s4.1-4.6 4.1-7.6c0-2.2-1.8-4-4.1-4zm0 5.4a1.4 1.4 0 1 1 0-2.8 1.4 1.4 0 0 1 0 2.8z"/>
+            </svg>
+          </span>
+        </a>
+        <div class="route-caption">
+          <h2 id="route-heading" class="sr-only">See the route</h2>
+          <p class="route-venue" data-bind="venueName">Dhankhar Farmhouse</p>
+          <p class="route-address" data-bind="venueAddress">Jhajjar, Jhajjarrural, Haryana 124103</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="blessings" class="bless-hero" aria-labelledby="bless-heading">
+    <div class="bless-inner">
+      <h2 id="bless-heading" class="bless-title" data-bind="blessings.title">Blessings</h2>
+      <p class="bless-ornament" aria-hidden="true"></p>
+      <p class="bless-copy" data-bind="blessings.body">May the bride and groom be blessed with a lifetime of love, laughter and companionship. As they take the seven sacred pheras, may each vow bind their hearts closer and guide them through every season of life. May their home be filled with warmth, respect and understanding, their days with joy and their years with good health and prosperity. May they always be each other's strength in difficult times and greatest joy in happy ones, and may the blessings of their families and elders stay with them forever.</p>
+    </div>
+  </section>
+
+  <section id="follow" class="follow-hero" aria-labelledby="follow-heading">
+    <div class="follow-copy">
+      <h2 id="follow-heading" class="follow-title">Follow the action</h2>
+      <p class="follow-hashtag" id="follow-hashtag" hidden></p>
+    </div>
+    <img class="follow-car" src="assets/art/car-follow.webp" alt="A painted teal vintage car." width="1020" height="780">
+  </section>
 
   <footer id="outro" class="countdown-hero">
     <div class="star-field" aria-hidden="true"></div>
