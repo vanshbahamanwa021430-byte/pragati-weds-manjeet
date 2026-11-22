@@ -25,12 +25,22 @@
   --display: "Cinzel", "Palatino Linotype", Palatino, serif;
   --serif: "Playfair Display", "Palatino Linotype", Palatino, serif;
   --body: "Cormorant Garamond", "Palatino Linotype", Palatino, serif;
-  --col: min(100%, 28.5rem);
+  --col: min(36rem, 100%);
 }
+
+/* full-bleed hero */
+
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-html, body { margin: 0; padding: 0; background: #2a4a72; color: var(--cream); }
+html, body {
+  margin: 0; padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: #2a4a72;
+  color: var(--cream);
+}
 body { font-family: var(--body); font-size: 1.15rem; line-height: 1.55; }
 img { max-width: 100%; display: block; }
 button, input, textarea, select { font: inherit; color: inherit; }
@@ -67,15 +77,34 @@ a { color: inherit; }
 .music-toggle svg { width: 22px; height: 22px; }
 .music-toggle.is-muted { opacity: .9; }
 
-/* ---- Hero ---- */
-.hero { background: #2a4a72; }
+/* ---- Hero: always full-bleed; scale up to crop baked-in side bars ---- */
+.hero {
+  width: 100%;
+  max-width: none;
+  background: #1a3358;
+}
 .hero-stage {
   position: relative;
-  width: var(--col);
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
   overflow: hidden;
 }
-.hero-art { width: 100%; height: auto; vertical-align: top; }
+.hero-inner {
+  position: relative;
+  /* Source screenshots had ~4% blue gutters each side; scale up and clip. */
+  width: 112%;
+  margin-left: -6%;
+}
+.hero-art {
+  width: 100%;
+  max-width: none;
+  height: auto;
+  display: block;
+  vertical-align: top;
+  object-fit: cover;
+  object-position: center center;
+}
 .lantern-field {
   position: absolute; inset: 0; overflow: hidden;
   pointer-events: none; z-index: 2;
@@ -358,8 +387,12 @@ a { color: inherit; }
 .toast.is-on { opacity: 1; transform: translate(-50%, 0); }
 
 @media (min-width: 900px) {
-  :root { --col: min(100% - 2rem, 36rem); }
+  :root { --col: min(40rem, 100%); }
   .hero-name { letter-spacing: 0.2em; }
+  /* Crop ~10% off the top of the tall art (margin % is of the stage width).
+     10% of image height ≈ 0.10 * 1.12 * (6822/1888) * width = 40.47% of width.
+     Names stay in the first fold at 1366x768, 1440x900 and 1920x1080. */
+  .hero-inner { margin-top: -40.47%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
